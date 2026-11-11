@@ -27,7 +27,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
   `shared/catalog.ts`: export typed `MATERIALS` (id, name, description, tier, defaultPatternId, patterns[]), `COLORS` (id, name, hex), `TRIMS` (id, name, hex|null), plus id types. Data exactly as in the spec and canvas (4 materials × 3 patterns incl. each pattern's texture params `rows/ticks/seams/arcs/batten`, 8 colors, 4 trims). Helpers: `getMaterial`, `getPattern(materialId, patternId)`, `isMaterialId`, `isTrimId`, `isColorId`.
   *Tests (`tests/unit/shared/catalog.test.ts`):* 4 materials, 3 patterns each, default pattern belongs to its material, 8 colors, ids unique, shingle default pattern = Dimensional, metal = Wide seam, tile = Spanish S, slate = Uniform.
 
-- [ ] **T04 · Steps**
+- [x] **T04 · Steps**
   `shared/steps.ts`: `STEPS` (address, style, color, design, solar, review, done) with label and path (`/`, `/configure/<step>`); helpers `nextStep`, `prevStep`, `stepFromPath`, and the CTA label per step (canvas: "See my real price", "Continue to color", "Continue to design", "Continue to solar", "Review my roof", "See my real price").
   *Tests:* order, next/prev at ends return `undefined`, path round-trip.
 
