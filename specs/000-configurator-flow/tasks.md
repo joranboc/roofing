@@ -19,7 +19,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
   *Files:* `package.json`, `nuxt.config.ts`, `eslint.config.mjs`, existing sources, `AGENTS.md`.
   *Accept:* `pnpm lint` exits 0; typecheck and tests still pass. `pnpm approve-builds` used only for a single named package if prompted, never `--all`.
 
-- [ ] **T02 · Theme tokens and fonts**
+- [x] **T02 · Theme tokens and fonts**
   Add `@theme` tokens to `app/assets/css/main.css`: colors `accent #C2410C`, `ink #15171A`, `muted #5B6168`, `line #E3E5E8`, `field #C9CDD2`, `selected #FFF7F2`, `danger #B42318`; font families `Inter` (body) and `Space Grotesk` (display). Add the Google Fonts `<link>` (Inter 400/500/600, Space Grotesk 500/600/700) to `app.head` in `nuxt.config.ts`. Set `body` text color/font from tokens.
   *Accept:* a unit test renders an element with `text-ink bg-selected` classes without error; `pnpm build` succeeds.
 

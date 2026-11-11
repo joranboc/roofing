@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --color-accent: #C2410C;
+  --color-ink: #15171A;
+  --color-muted: #5B6168;
+  --color-line: #E3E5E8;
+  --color-field: #C9CDD2;
+  --color-selected: #FFF7F2;
+  --color-danger: #B42318;
+
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink font-sans;
+  }
+}
