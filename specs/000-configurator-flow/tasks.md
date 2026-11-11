@@ -31,7 +31,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
   `shared/steps.ts`: `STEPS` (address, style, color, design, solar, review, done) with label and path (`/`, `/configure/<step>`); helpers `nextStep`, `prevStep`, `stepFromPath`, and the CTA label per step (canvas: "See my real price", "Continue to color", "Continue to design", "Continue to solar", "Review my roof", "See my real price").
   *Tests:* order, next/prev at ends return `undefined`, path round-trip.
 
-- [ ] **T05 · Configuration and query parsing**
+- [x] **T05 · Configuration and query parsing**
   `shared/configuration.ts`: `Configuration` type, `DEFAULTS` (shingle, Dimensional, charcoal, white, solar on, usage 600, `ns`, panels undefined, address ''), `parseQuery(query)` and `toQuery(config)` per the plan's query contract. Never throws; invalid values fall back to defaults; `pattern` not belonging to the material falls back to the material default; `usage` must be a non-negative integer; `panels` a non-negative integer or undefined. `toQuery` omits default values except `address`. Helpers returning new configs: `withMaterial` (resets pattern), `withUsage`/`withOrient` (clear panels).
   *Tests:* round-trip for several configs; each invalid value → default; arrays in query (`?color=a&color=b`) handled (first value); material change resets pattern; usage/orient change clears panels; empty address preserved as ''.
 
