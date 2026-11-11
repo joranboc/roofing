@@ -37,7 +37,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
 
 ## Slice 3 — Server (built early so UI tasks can consume it)
 
-- [ ] **T06 · Hash and measurement**
+- [x] **T06 · Hash and measurement**
   `server/utils/hash.ts` (`fnv1a32(str): number`, UTF-8, unsigned) and `server/utils/measure.ts` (`normalizeAddress`, `measureRoof(address) → { roofAreaSqFt }`, formula in the plan).
   *Tests:* known FNV-1a vectors (`""` → `0x811c9dc5`, `"a"` → `0xe40c292c`, `"foobar"` → `0xbf9cf968`); area is in 1400–3400 and a multiple of 100; same address with different case/whitespace → same area; different addresses produce more than one distinct area across a sample of 50.
 
