@@ -41,7 +41,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
   `server/utils/hash.ts` (`fnv1a32(str): number`, UTF-8, unsigned) and `server/utils/measure.ts` (`normalizeAddress`, `measureRoof(address) → { roofAreaSqFt }`, formula in the plan).
   *Tests:* known FNV-1a vectors (`""` → `0x811c9dc5`, `"a"` → `0xe40c292c`, `"foobar"` → `0xbf9cf968`); area is in 1400–3400 and a multiple of 100; same address with different case/whitespace → same area; different addresses produce more than one distinct area across a sample of 50.
 
-- [ ] **T07 · Pricing and validation**
+- [x] **T07 · Pricing and validation**
   `server/utils/pricing.ts` (rate, pattern-adjustment and trim-fee tables exactly as in the spec; `computePrice({roofAreaSqFt, material, pattern, trim}) → { total, currency: 'USD' }`, `roundTo10`) and `server/utils/validate.ts` (guards that throw `createError({ statusCode: 400, statusMessage, data: { field } })` for unknown material/trim, pattern not in material, area not a finite number in (0, 100000], blank address).
   *Tests:* spec example 2000 sq ft shingle/Dimensional/white = 12000; one case per material; each pattern adjustment; bronze fee; rounding to 10; every guard failure.
 
