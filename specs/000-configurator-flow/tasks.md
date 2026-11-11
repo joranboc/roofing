@@ -23,7 +23,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
   Add `@theme` tokens to `app/assets/css/main.css`: colors `accent #C2410C`, `ink #15171A`, `muted #5B6168`, `line #E3E5E8`, `field #C9CDD2`, `selected #FFF7F2`, `danger #B42318`; font families `Inter` (body) and `Space Grotesk` (display). Add the Google Fonts `<link>` (Inter 400/500/600, Space Grotesk 500/600/700) to `app.head` in `nuxt.config.ts`. Set `body` text color/font from tokens.
   *Accept:* a unit test renders an element with `text-ink bg-selected` classes without error; `pnpm build` succeeds.
 
-- [ ] **T03 · Catalog**
+- [x] **T03 · Catalog**
   `shared/catalog.ts`: export typed `MATERIALS` (id, name, description, tier, defaultPatternId, patterns[]), `COLORS` (id, name, hex), `TRIMS` (id, name, hex|null), plus id types. Data exactly as in the spec and canvas (4 materials × 3 patterns incl. each pattern's texture params `rows/ticks/seams/arcs/batten`, 8 colors, 4 trims). Helpers: `getMaterial`, `getPattern(materialId, patternId)`, `isMaterialId`, `isTrimId`, `isColorId`.
   *Tests (`tests/unit/shared/catalog.test.ts`):* 4 materials, 3 patterns each, default pattern belongs to its material, 8 colors, ids unique, shingle default pattern = Dimensional, metal = Wide seam, tile = Spanish S, slate = Uniform.
 
