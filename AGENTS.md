@@ -95,6 +95,6 @@ Use Node 26 (`nvm use`, see `.nvmrc`) and pnpm 12.
 - `pnpm typecheck` — `nuxt typecheck` (uses TypeScript 6; TS 7 breaks `vue-tsc`, do not upgrade until supported)
 - `pnpm test` — Vitest unit/integration (`tests/unit`)
 - `pnpm test:e2e` — Playwright (`tests/e2e`; first run needs `pnpm exec playwright install chromium`)
-- `pnpm lint` — TBD, no linter chosen yet
+- `pnpm lint` — ESLint via `@nuxt/eslint` (flat config, stylistic rules; no Prettier)
 
 pnpm 12 blocks dependency build scripts by default; approve only the specific package needed (`pnpm approve-builds <pkg>`), never `--all`.

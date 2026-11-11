@@ -14,7 +14,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
 
 ## Slice 1 — Tooling, theme, shared domain
 
-- [ ] **T01 · Add ESLint**
+- [x] **T01 · Add ESLint**
   Add dev deps `@nuxt/eslint` and `eslint` (Nuxt module, flat config, stylistic rules, no Prettier). Add `"lint": "eslint ."` script. Fix findings in existing files. Update the `pnpm lint` line in AGENTS.md from "TBD" to the real command (Sonnet edits AGENTS.md).
   *Files:* `package.json`, `nuxt.config.ts`, `eslint.config.mjs`, existing sources, `AGENTS.md`.
   *Accept:* `pnpm lint` exits 0; typecheck and tests still pass. `pnpm approve-builds` used only for a single named package if prompted, never `--all`.
