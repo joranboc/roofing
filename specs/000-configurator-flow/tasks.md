@@ -45,7 +45,7 @@ Spec: [spec.md](./spec.md) · Plan: [plan.md](./plan.md) (both approved)
   `server/utils/pricing.ts` (rate, pattern-adjustment and trim-fee tables exactly as in the spec; `computePrice({roofAreaSqFt, material, pattern, trim}) → { total, currency: 'USD' }`, `roundTo10`) and `server/utils/validate.ts` (guards that throw `createError({ statusCode: 400, statusMessage, data: { field } })` for unknown material/trim, pattern not in material, area not a finite number in (0, 100000], blank address).
   *Tests:* spec example 2000 sq ft shingle/Dimensional/white = 12000; one case per material; each pattern adjustment; bronze fee; rounding to 10; every guard failure.
 
-- [ ] **T08 · API routes + contract tests**
+- [x] **T08 · API routes + contract tests**
   `server/api/measure.post.ts` and `server/api/price.post.ts` using T06/T07 (read JSON body, validate, return result).
   *Tests (`tests/e2e/api.spec.ts`, Playwright `request`):* measure success + determinism + blank → 400; price success (12000 case) + determinism + each 400 case. Run `pnpm test:e2e` (first run may need `pnpm exec playwright install chromium`).
 
